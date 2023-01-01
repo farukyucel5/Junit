@@ -16,8 +16,7 @@ public class C03_Cookies extends TestBase {
         //2- tum cookie’leri listeleyin
         Set<Cookie> cookiesSeti= driver.manage().getCookies();
         int siraNo=1;
-        for (Cookie eachCookie:cookiesSeti
-        ) {
+        for (Cookie eachCookie:cookiesSeti) {
             System.out.println(siraNo +"- " + eachCookie);
             siraNo++;
         }
@@ -26,8 +25,7 @@ public class C03_Cookies extends TestBase {
         //4- ismi i18n-prefs olan cookie degerinin USD oldugunu test edin
         String expectedCookieDegeri="USD";
         String actualCookieDegeri="";
-        for (Cookie eachCookie:cookiesSeti
-        ) {
+        for (Cookie eachCookie:cookiesSeti) {
 
             if (eachCookie.getName().equals("i18n-prefs")){
                 actualCookieDegeri=eachCookie.getValue();
@@ -44,8 +42,7 @@ public class C03_Cookies extends TestBase {
 
         cookiesSeti= driver.manage().getCookies();
         siraNo=1;
-        for (Cookie eachCookie:cookiesSeti
-        ) {
+        for (Cookie eachCookie:cookiesSeti) {
             System.out.println(siraNo +"- " + eachCookie);
             siraNo++;
         }
@@ -55,8 +52,7 @@ public class C03_Cookies extends TestBase {
         expectedCookieDegeri="cikolatali";
         int cikolataliCookieSayisi=0;
 
-        for (Cookie eachCookie:cookiesSeti
-        ) {
+        for (Cookie eachCookie:cookiesSeti) {
 
             if (eachCookie.getName().equals("en sevdigim cookie")){
                 cikolataliCookieSayisi++;
@@ -71,8 +67,7 @@ public class C03_Cookies extends TestBase {
 
         cookiesSeti= driver.manage().getCookies();
         int skinCookieSayisi=0;
-        for (Cookie eachCookie:cookiesSeti
-        ) {
+        for (Cookie eachCookie:cookiesSeti) {
 
             if (eachCookie.getName().equals("skin")){
                 skinCookieSayisi++;
