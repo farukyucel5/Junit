@@ -64,14 +64,22 @@ public class C04_WebTables extends TestBase {
         //8.Satir ve sutun sayisini parametre olarak alip, hucredeki bilgiyi döndüren bir method olusturun
 
 
-        int rowValue =3;
+        System.out.println("==================");
+        WebElement istenenDataElementi= getElement(5,7);
+        System.out.println(istenenDataElementi.getText());
 
-        int columnValue =3;
-        System.out.println("=============================================");
-
-        String xpath1="//tbody/tr["+rowValue+"]/td["+columnValue+"]";
-        WebElement element=driver.findElement(By.xpath(xpath1));
-        System.out.println(element.getText());
         ReuseableMethods.waiting(3);
     }
-}
+
+    private WebElement getElement(int satir, int sutun) {
+
+        //     //tbody/tr[5]/td[7]
+
+        String dinamikXpath="//tbody/tr["+ satir +"]/td["+ sutun +"]";
+
+        WebElement istenenElement= driver.findElement(By.xpath(dinamikXpath));
+
+
+        return istenenElement;
+    }
+    }
