@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 
 public class C03_readExcel {
@@ -58,8 +59,19 @@ public class C03_readExcel {
                     workbook.getSheet("Sayfa1").getRow(i).getCell(3).toString();
 
             ulkelerMap.put(key,value);
+
+        }
+        //Set<Map.Entry<Integer,String>> ogrenciEntrySeti =ogrenciMap.entrySet();
+
+        Set<Map.Entry<String,String>> ulkeEntrySet=ulkelerMap.entrySet();
+
+        for (Map.Entry<String,String> each:ulkeEntrySet){
+            System.out.println(each);
+
         }
 
-        System.out.println(ulkelerMap);
+
+
+        //System.out.println(ulkelerMap);
     }
 }
